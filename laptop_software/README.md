@@ -1,5 +1,5 @@
-This folder contains instructions for how to install necessary software on your laptop. After running these scripts, your laptop will be ready to interface with the TurtleBots. We are assuming you will run this on Ubuntu 18.04. YMMV on other distros.
-
+This folder contains instructions for how to install necessary software on your laptop. After running these scripts, your laptop will be ready to interface with the TurtleBots. We are assuming you will run this on Ubuntu 18.04. YMMV on other distros. We also assume that you've generated an SSH key and added it to GitHub. If you don't think you've done this yet, following the steps [here](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh).
+ 
 ### Step 1
 Open up a new terminal. You can do this my pressing `ctrl` + `shift` + `+` or `windows key` (`cmd` on a Mac) + `space` and searching for 'Terminal' . Run the following by typing each line in and hitting enter, one at a time.
 
@@ -10,12 +10,17 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-* This next line uses a tool called wget. It's popular tool for Unix-based systems. It was first released in 1996 and is part of the GNU project. You can read more about it [here](https://en.wikipedia.org/wiki/Wget). We use it to copy a file in this repository onto your computer.
+* Now you're almost ready to download the code in this repository. You'll want to save the code to your Documents folder (folder="directory" in Linux-speak). You'll do this by first navigating to the Documents directory, then downloading the code. You can use the command `cd` ("change directory") to change your *working directory* (the directory you're currently working in) to the Documents directory. We let the computer know where the Documents directory is relative to home (home is represented by `~`). If you want to read more about `cd`, you can do that [here](https://en.wikipedia.org/wiki/Cd_(command)).
 ```
-wget https://raw.githubusercontent.com/UCincy-Robotics/turtlebot-setup/main/laptop_software/install_ros_melodic.sh
+cd ~/Documents
 ```
 
-* chmod is a popular command for Unix-based systems. It was invented in 1971, and lets you change which users have access to a certain file. The term chmod comes from 'change mode'. You can read more about it [here](https://en.wikipedia.org/wiki/Chmod). Each 7 indicates someone who is receiving full access to read, write, and execute the file. In this case, the file owner, member's of the file's group, and all others are given full access to the file.
+* We'll use a tool called git to copy (or "clone") it to your computer. More on [git](https://en.wikipedia.org/wiki/Git).
+```
+git clone git@github.com:UCincy-Robotics/turtlebot-setup.git
+```
+
+* chmod is a popular command for Unix-based systems. It was invented in 1971, and lets you change which users have access to a certain file. The term chmod comes from 'change mode'. You can read more about it [here](https://en.wikipedia.org/wiki/Chmod). 7 indicates someone who is receiving full access to read, write, and execute the file. Each 5 indicates someone who is receiving access to read and execute - but not write to - the file. In this case, the file owner has access to read/write/execute and member's of the file's group and all others are given read/execute access to the file.
 ```
 chmod 755 ./install_ros_melodic.sh
 ```
@@ -24,3 +29,6 @@ chmod 755 ./install_ros_melodic.sh
 ```
 bash ./install_ros_melodic.sh
 ```
+
+### Step 2
+ROS depends on certain packages in order to work. In this step, we'll install those dependencies.
