@@ -31,4 +31,29 @@ bash ./install_ros_melodic.sh
 ```
 
 ### Step 2
-ROS depends on certain packages in order to work. In this step, we'll install those dependencies.
+ROS and the TurtleBot tutorials depend on certain packages in order to work. In this step, we'll install those dependencies. 
+
+* You already downloaded a file containing the command to install the dependencies, you just need to give yourself permission to execute the code in the file. Go ahead and execute
+```
+chmod 755 ./step_2.sh
+```
+
+* Now that you have permission to run the file, go ahead and execute it. Although we used `bash ./<script_name>.sh` before, you can actually shorten this to just:
+```
+./step_2.sh
+```
+
+
+### Step 3
+The TurtleBots themselves depend on another set of packages.
+
+* You can install them changing the file permissions:
+```
+chmod 755 ./step_3.sh
+```
+
+* And executing the file:
+```
+./step_3.sh
+```
+
