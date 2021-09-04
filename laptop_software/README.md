@@ -1,0 +1,1 @@
+This folder contains instructions for how to install necessary software on your laptop. After running these scripts, your laptop will be ready to interface with the TurtleBots. We are assuming you will run this on Ubuntu 18.04. YMMV on other distros.
