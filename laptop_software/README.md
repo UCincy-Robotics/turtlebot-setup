@@ -20,6 +20,11 @@ cd ~/Documents
 git clone git@github.com:UCincy-Robotics/turtlebot-setup.git
 ```
 
+* Using git to download code will preserve the project's directory structure that you see on GitHub. To get to the files you need, you'll have to change directories again. You can step into a folder inside a folder using cd, like this:
+```
+cd turtlebot-setup/laptop_software
+```
+
 * chmod is a popular command for Unix-based systems. It was invented in 1971, and lets you change which users have access to a certain file. The term chmod comes from 'change mode'. You can read more about it [here](https://en.wikipedia.org/wiki/Chmod). 7 indicates someone who is receiving full access to read, write, and execute the file. Each 5 indicates someone who is receiving access to read and execute - but not write to - the file. In this case, the file owner has access to read/write/execute and member's of the file's group and all others are given read/execute access to the file.
 ```
 chmod 755 ./install_ros_melodic.sh
